@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "GPT Quick History",
+  "version": "0.1.0",
+  "description": "A Chrome extension that helps you quickly access your Chat GPT query history.",
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Alt+Up"
+      }
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.js"]
+    }
+  ],
+  "permissions": ["activeTab", "scripting", "<all_urls>"]
+}
